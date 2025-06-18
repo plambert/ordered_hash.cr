@@ -1,6 +1,7 @@
-# ordered_hash
+# OrderedHash
 
-TODO: Write a description here
+A Crystal class that acts as a Hash, but remembers the order of key inserts and returns the
+keys in that same order.
 
 ## Installation
 
@@ -18,9 +19,16 @@ TODO: Write a description here
 
 ```crystal
 require "ordered_hash"
-```
 
-TODO: Write usage instructions here
+hash = OrderedHash(String, String).new
+hash["wednesday"] = "piano lesson"
+hash["thursday"] = "guitar lesson"
+
+hash.keys # ==> ["wednesday", "thursday"] # _always_ will return in this order!
+
+new_hash = hash.sort
+new_hash.keys # ==> ["thursday", "wednesday"] # the keys have been sorted, so will _always_ return in this order
+```
 
 ## Development
 
