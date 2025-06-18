@@ -35,7 +35,7 @@ describe OrderedHash do
     shash.keys.should eq keys.reject("three")
   end
 
-  it "allows keys to be ordered" do
+  it "allows keys to be sorted" do
     keys = %w{zero one two three four five six seven eight nine}
     ordered_keys = %w{eight five four nine one seven six three two zero}
     ordered_ints = [8, 5, 4, 9, 1, 7, 6, 3, 2, 0]
